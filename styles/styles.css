@@ -1,0 +1,264 @@
+@import './normalize.css';
+/* importing fonts */
+@import 'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
+#page .instruction details summary h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.computer-player, .user-player {
+  border: 1px solid rgba(16, 8, 46, 0.8352941176);
+  flex: 1;
+}
+.computer-player h2, .user-player h2 {
+  text-align: center;
+  padding-top: 20px;
+}
+.computer-player .floor-section, .user-player .floor-section {
+  display: flex;
+  flex-direction: column;
+}
+.computer-player .floor-section .sub-section, .user-player .floor-section .sub-section {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  margin: 20px;
+}
+.computer-player .floor-section .sub-section h3, .user-player .floor-section .sub-section h3 {
+  flex: 1;
+  text-align: center;
+  background-color: #514b74;
+  color: #ffffff;
+  padding: 10px;
+}
+.computer-player .floor-section .sub-section > div, .user-player .floor-section .sub-section > div {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.computer-player .floor-section .sub-section > div > div:first-of-type, .user-player .floor-section .sub-section > div > div:first-of-type {
+  border-right: 1px solid #10082e;
+}
+.computer-player .floor-section .sub-section .square-sm, .user-player .floor-section .sub-section .square-sm {
+  height: 112px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Public Sans", Arial, Helvetica, sans-serif;
+  color: #514b74;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  margin: 0;
+}
+html img {
+  width: 100%;
+}
+html header,
+html footer {
+  text-align: center;
+  background-color: rgba(16, 8, 46, 0.8352941176);
+  color: #ffffff;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+footer div small {
+  padding: 20px;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1024px;
+  margin: auto;
+}
+#page main {
+  padding: 20px;
+}
+#page main .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#page main .wrapper .controller {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+#page .instruction {
+  flex: 1;
+  padding: 20px;
+}
+#page .instruction details {
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(16, 8, 46, 0.8352941176);
+}
+#page .instruction details summary {
+  display: flex;
+  justify-content: space-between;
+}
+#page .instruction details summary h3 {
+  display: inline-block;
+}
+#page .instruction details summary :hover {
+  color: #a87507;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#popup-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background-color: rgba(120, 185, 211, 0.5);
+}
+#popup-container .popup {
+  width: 350px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px rgba(81, 75, 116, 0.8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#popup-container .popup > div {
+  display: flex;
+}
+
+.game-floor {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-player {
+  background-color: chocolate;
+}
+
+.computer-player {
+  background-image: url("../images/code-back.png");
+  background-color: rgba(95, 190, 0, 0.863);
+  background-repeat: repeat-y;
+  background-position: top right;
+  background-size: auto;
+}
+
+.fix-height {
+  flex: 1;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.fix-height > div {
+  padding: 10px;
+  flex: 0;
+}
+.fix-height .dice-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.button {
+  color: #ffffff;
+  border: 1px solid #514b74;
+  background-color: #514b74;
+  padding: 10px;
+  margin: 0 10px;
+}
+.button:enabled {
+  background-color: #514b74;
+}
+.button:hover {
+  background-color: #a87507;
+  color: #ffffff;
+  cursor: pointer;
+}
+.button:active {
+  background-color: rgba(16, 8, 46, 0.8352941176);
+  color: #ffffff;
+}
+.button:disabled {
+  background-color: #cecece;
+}
+
+.round-info-message {
+  font-size: 1.2rem;
+  background-color: #a87507;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .game-floor {
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  footer div small {
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    color: rgba(16, 8, 46, 0.8352941176);
+    font-weight: 400;
+  }
+
+  body {
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("../images/images1.jpg");
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+  }
+
+  #page {
+    background-color: rgba(255, 255, 255, 0.96);
+  }
+}/*# sourceMappingURL=styles.css.map */

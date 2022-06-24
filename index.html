@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+  Developer   : Trong Phan
+  Student ID  : A01321528
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dice Game - Trong Phan | A01321528 - COMP2132 - Final Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./scripts/jquery-3.6.0.min.js" defer></script>
+    <script src="./scripts/dice-game.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+  </head>
+
+  <body>
+    <div id="page">
+      <header>
+        <h1>Dice Game</h1>
+      </header>
+      <main>
+        <div class="wrapper">
+          <div class="game-floor">
+            <section class="user-player">
+              <h2>You</h2>
+              <div class="floor-section">
+                <section class="sub-section">
+                  <h3>Your Dice</h3>
+                  <div>
+                    <div class="fix-height">
+                      <div>Dice #1</div>
+                      <div class="dice-container">
+                        <div class="square-sm">
+                          <img
+                            id="user-dice-1"
+                            src="./images/dice/dice-0.png"
+                            alt="A dice"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fix-height">
+                      <div>Dice #2</div>
+                      <div class="dice-container">
+                        <div class="square-sm">
+                          <img
+                            id="user-dice-2"
+                            src="./images/dice/dice-0.png"
+                            alt="A dice"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="sub-section">
+                  <h3>Your Score</h3>
+                  <div>
+                    <div class="fix-height">
+                      <div>Score of the Round</div>
+                      <div class="dice-container">
+                        <div id="user-round-score" class="score">0</div>
+                      </div>
+                    </div>
+                    <div class="fix-height">
+                      <div>Total Score</div>
+                      <div class="dice-container">
+                        <div id="user-total-score" class="score">0</div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+            <section class="computer-player">
+              <h2>Computer</h2>
+              <div class="floor-section">
+                <section class="sub-section">
+                  <h3>Computer's Dice</h3>
+                  <div>
+                    <div class="fix-height">
+                      <div>Dice #1</div>
+                      <div class="dice-container">
+                        <div class="square-sm">
+                          <img
+                            id="comp-dice-1"
+                            src="./images/dice/dice-0.png"
+                            alt="A dice"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fix-height">
+                      <div>Dice #2</div>
+                      <div class="dice-container">
+                        <div class="square-sm">
+                          <img
+                            id="comp-dice-2"
+                            src="./images/dice/dice-0.png"
+                            alt="A dice"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="sub-section">
+                  <h3>Computer's Score</h3>
+                  <div>
+                    <div class="fix-height">
+                      <div>Score of the Round</div>
+                      <div class="dice-container">
+                        <div id="comp-round-score" class="score">0</div>
+                      </div>
+                    </div>
+                    <div class="fix-height">
+                      <div>Total Score</div>
+                      <div class="dice-container">
+                        <div id="comp-total-score" class="score">0</div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+          <div>
+            <div class="round-info-message" id="current-round-text"></div>
+          </div>
+          <div class="controller">
+            <div>
+              <button class="button" id="btn-new-game">New Game</button>
+              <button class="button" id="btn-roll-dice">Roll Dice</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="instruction">
+        <details>
+          <summary>
+            <h3>How to Play</h3>
+            <span>[show]</span>
+          </summary>
+          <ul>
+            <li>To start, click the Roll Dice button.</li>
+            <li>
+              To advance to the next round, click the 'Roll Dice' button again.
+            </li>
+            <li>
+              After three rounds, the game is over and the final score is
+              calculated.
+            </li>
+            <li>
+              If you want to play again, click the 'New Game' button of refresh
+              the page.
+            </li>
+          </ul>
+        </details>
+        <details>
+          <summary>
+            <h3>Rules</h3>
+            <span>[show]</span>
+          </summary>
+          <ul>
+            <li>Each round, you and the computer both roll a pair of dice.</li>
+            <li>
+              Your score fir that round will be based on the sum of the dice.
+            </li>
+            <li>
+              If you roll doubles (e.g. a 3 and a 3) then your score is
+              multiplied by 2.
+            </li>
+            <li>Rolling a 1 will give you a score of 0 for that round.</li>
+            <li>
+              the player who has the most points at the end of three rounds is
+              the winner.
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="popup-container" class="hide">
+        <section class="popup" id="popup-instruction">
+          <h2 id="result-message-title"></h2>
+          <div>
+            <img
+              id="popup-image"
+              src="./images/celebration.webp"
+              alt="celebrating or denouncing"
+            />
+          </div>
+          <p id="result-message-subtitle"></p>
+          <div>
+            <button class="button" id="popup-close-btn">Close</button>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <div>
+          <small>Developer: Trong Phan | Student ID: A01321528</small>
+          <small>COMP2132 - Final Project | Spring 2022</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
